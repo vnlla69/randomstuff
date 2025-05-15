@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Spot Tavern</title>
+    <style>
+        .logout-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        .logout-button button {
+            padding: 8px 15px;
+            background: #f44336;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="staff-profile">
+        <h1>Staff Dashboard</h1>
+        <div class="staff-info">
+            <h2>Staff Name</h2>
+            <p>Position: Staff</p>
+        </div>
+    </div>
+
+    <div class="logout-button">
+        <button onclick="logout()">Logout</button>
+    </div>
+
+    <script>
+        // Show welcome message when page loads
+        window.onload = function() {
+            // You can get the staff name from localStorage if implementing client-side auth
+            const staffName = localStorage.getItem('staffName') || 'Staff Member';
+            alert('Welcome ' + staffName + '!');
+        };
+
+        function logout() {
+            // Clear any stored session data
+            localStorage.clear();
+            // Redirect to admin dashboard
+            window.location.href = './admin-dashboard.html';
+        }
+    </script>
+</body>
+</html>

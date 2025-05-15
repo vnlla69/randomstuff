@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Spot Tavern</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        :root {
+            --primary-color: #e8720d;
+            --primary-dark: #723a08;
+            --shades: #381a01;
+            --accent-color: #ff9500;
+            --secondary-color: #eec249;
+            --secondary-accent: #31280e;
+            --text-color: #fff;
+            --text-color-2: #000;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            width: 100vw;
+            padding: 20px;
+        }
+
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            gap: 3rem;
+        }
+
+        .admin-profile {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas: 
+                "profile desc"
+                "profile desc";
+            width: 35%;
+            min-width: 300px;
+            align-items: center;
+            justify-content: space-around;
+            border-radius: 3px;
+            padding: 1rem;
+            background-color: var(--secondary-accent);
+            transition: box-shadow 0.2s;
+        }
+
+        .admin-profile:hover {
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.342);
+        }
+
+        .admin-profile img {
+            grid-area: profile;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 1px solid var(--accent-color);
+        }
+
+        .admin-profile .desc {
+            grid-area: desc;
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            height: 90%;
+            width: 100%;
+            border: var(--accent-color) 1px solid;
+            padding: 1rem;
+        }
+
+        .cards {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            place-items: center;
+        }
+
+        .cards > div {
+            background: var(--secondary-accent);
+            color: var(--text-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            width: 100%;
+            height: 100%;
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cards > div:hover {
+            transform: translateY(-4px) scale(1.03);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+        }
+
+        .cards h1 {
+            font-size: 1.2em;
+            margin-bottom: 15px;
+        }
+
+        .cards a {
+            display: inline-block;
+            background: var(--accent-color);
+            color: var(--text-color);
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            margin-top: auto;
+            transition: background-color 0.3s;
+            text-align: center;
+        }
+
+        .cards a:hover {
+            background: var(--primary-dark);
+        }
+
+        .supply .raw, .supply .menu, .supply .inventory {
+            margin-top: 15px;
+            padding: 10px;
+            background: var(--shades);
+            border-radius: 4px;
+        }
+
+        .supply .raw p, .supply .menu p, .supply .inventory p {
+            margin-bottom: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .admin-profile {
+                width: 100%;
+                grid-template-columns: 1fr;
+                grid-template-areas: 
+                    "profile"
+                    "desc";
+                text-align: center;
+            }
+            
+            .admin-profile img {
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="admin-profile">
+            <img src="admin.jpg" alt="Admin Profile">
+            <div class="desc">
+                <h2>Admin Name</h2>
+                <p>Manager</p>
+                <p>ID: ADMIN001</p>
+            </div>
+        </div>
+
+        <div class="cards">
+            <div class="crm">
+                <h1>Track what the customer want</h1>
+                <a href="./CRM.html">Track now</a>
+            </div>
+            <div class="finance">
+                <h1>Analyze the company's finances</h1>
+                <a href="./financial-management.html">Analyze now</a>
+            </div>
+            <div class="supply">
+                <h1>Manage the inventory of the company</h1>
+                <div class="raw">
+                    <p>Track raw materials</p>
+                    <a href="./supply-management.html">Track now</a>
+                </div>
+                <div class="menu">
+                    <p>Track menu items</p>
+                    <a href="./menu-management.html">Track now</a>
+                </div>
+                <div class="inventory">
+                    <p>Track inventory</p>
+                    <a href="./inventory.html">Track now</a>
+                </div>
+            </div>
+            <div class="employees">
+                <p>Employees management</p>
+                <a href="./employees.html">Manage</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
